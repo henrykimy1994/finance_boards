@@ -1,0 +1,12 @@
+[
+    { "id": 1, "category": "Groceries", "allocated": 500.00, "spent": 350.20 },
+    { "id": 2, "category": "Utilities", "allocated": 300.00, "spent": 190.19 },
+    { "id": 3, "category": "Food & Dining", "allocated": 400.00, "spent": 285.60 },
+    { "id": 4, "category": "Transportation", "allocated": 250.00, "spent": 155.80 },
+    { "id": 5, "category": "Entertainment", "allocated": 200.00, "spent": 129.50 },
+    { "id": 6, "category": "Health", "allocated": 150.00, "spent": 32.45 },
+    { "id": 7, "category": "Shopping", "allocated": 300.00, "spent": 215.75 },
+    { "id": 8, "category": "Housing", "allocated": 1200.00, "spent": 1200.00 },
+    { "id": 9, "category": "Education", "allocated": 100.00, "spent": 0.00 },
+    { "id": 10, "category": "Personal", "allocated": 100.00, "spent": 45.60 }
+  ]

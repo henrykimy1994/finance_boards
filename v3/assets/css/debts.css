@@ -1,0 +1,250 @@
+/* ===== DEBTS PAGE ===== */
+.debt-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+}
+
+.debt-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-5);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.debt-card .card-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.debt-card.total .card-icon {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+}
+
+.debt-card.payment .card-icon {
+    background-color: var(--primary-bg);
+    color: var(--primary);
+}
+
+.debt-card.interest .card-icon {
+    background-color: var(--warning-bg);
+    color: var(--warning);
+}
+
+.debt-card.payoff .card-icon {
+    background-color: var(--success-bg);
+    color: var(--success);
+}
+
+.debt-card .card-details {
+    flex: 1;
+}
+
+.debt-card h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-1);
+    margin-top: 0;
+}
+
+.debt-card .amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Debt Type Badge */
+.debt-type-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* Debt Progress Bar */
+.debt-progress-container {
+    width: 100%;
+    height: 6px;
+    background-color: var(--gray-200);
+    border-radius: var(--radius-full);
+}
+
+.debt-progress-bar {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: var(--radius-full);
+}
+
+/* Debt Actions */
+.debt-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.debt-actions button {
+    color: var(--text-tertiary);
+    padding: var(--spacing-1);
+    border-radius: var(--radius);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.debt-actions button:hover {
+    background-color: var(--gray-100);
+}
+
+.debt-actions .payment:hover {
+    color: var(--success);
+}
+
+.debt-actions .edit:hover {
+    color: var(--primary);
+}
+
+.debt-actions .delete:hover {
+    color: var(--danger);
+}
+
+/* Payoff Strategy */
+.payoff-strategy {
+    margin-top: var(--spacing-8);
+}
+
+.payoff-strategy .card-header select {
+    height: 36px;
+    min-width: 200px;
+    padding: 0 var(--spacing-3);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 16px;
+    padding-right: 2rem;
+}
+
+.payoff-strategy .card-header select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.payoff-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-6);
+}
+
+.payoff-chart, .payoff-steps {
+    flex: 1;
+}
+
+.payoff-chart h4, .payoff-steps h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-4);
+    margin-top: 0;
+}
+
+.payoff-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.payoff-step {
+    background-color: var(--gray-50);
+    border-radius: var(--radius);
+    padding: var(--spacing-4);
+    border-left: 3px solid var(--primary);
+}
+
+.payoff-step-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-3);
+}
+
+.payoff-step-title {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.payoff-step-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Debt Modal */
+#debt-modal .modal-dialog {
+    max-width: 500px;
+}
+
+#debt-form .form-group input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+#debt-form .form-group input[type="number"]::-webkit-inner-spin-button,
+#debt-form .form-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .payoff-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+}
+
+@media (max-width: 991px) {
+    .debt-summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .debt-summary-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+    
+    .debt-card {
+        padding: var(--spacing-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .debts-table th:nth-child(2),
+    .debts-table td:nth-child(2),
+    .debts-table th:nth-child(4),
+    .debts-table td:nth-child(4),
+    .debts-table th:nth-child(6),
+    .debts-table td:nth-child(6) {
+        display: none;
+    }
+}

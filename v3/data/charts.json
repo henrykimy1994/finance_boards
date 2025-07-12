@@ -1,0 +1,41 @@
+{
+    "categories": {
+      "month": {
+        "labels": ["Groceries", "Utilities", "Food & Dining", "Transportation", "Entertainment", "Health"],
+        "values": [350.20, 190.19, 285.60, 155.80, 129.50, 32.45],
+        "colors": ["#4CAF50", "#FF9800", "#F44336", "#2196F3", "#9C27B0", "#00BCD4"]
+      },
+      "week": {
+        "labels": ["Groceries", "Food & Dining", "Transportation", "Entertainment"],
+        "values": [120.50, 65.80, 42.30, 28.50],
+        "colors": ["#4CAF50", "#F44336", "#2196F3", "#9C27B0"]
+      }
+    },
+    "trends": {
+      "month": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "income": [4100.00, 4200.00, 4250.00, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "expenses": [2100.50, 2250.30, 2180.50, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      "week": {
+        "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "income": [0, 1000.00, 0, 0, 3250.00, 0, 0],
+        "expenses": [28.50, 42.30, 65.80, 0, 85.20, 120.50, 0]
+      },
+      "year": {
+        "labels": ["2024", "2025"],
+        "income": [48000.00, 12550.00],
+        "expenses": [24500.00, 6531.30]
+      }
+    },
+    "monthlyIncome": [
+      { "month": "Jan", "amount": 4100.00 },
+      { "month": "Feb", "amount": 4200.00 },
+      { "month": "Mar", "amount": 4250.00 }
+    ],
+    "monthlySpending": [
+      { "month": "Jan", "amount": 2100.50 },
+      { "month": "Feb", "amount": 2250.30 },
+      { "month": "Mar", "amount": 2180.50 }
+    ]
+  }

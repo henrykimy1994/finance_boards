@@ -1,0 +1,207 @@
+/* ===== BUDGET PAGE ===== */
+.budget-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+}
+
+.budget-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-5) var(--spacing-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.budget-card h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-2);
+    margin-top: 0;
+}
+
+.budget-card .amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.budget-card .amount.positive {
+    color: var(--success);
+}
+
+.budget-card .amount.negative {
+    color: var(--danger);
+}
+
+.budget-progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--gray-200);
+    border-radius: var(--radius-full);
+    position: relative;
+    margin-top: var(--spacing-3);
+}
+
+.budget-progress-bar {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: var(--radius-full);
+}
+
+.budget-progress-label {
+    position: absolute;
+    top: -22px;
+    right: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.budget-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-5);
+}
+
+.budget-category {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-5);
+    box-shadow: var(--shadow-sm);
+}
+
+.budget-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-3);
+}
+
+.budget-category-name {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.budget-category-name i {
+    font-size: 0.875rem;
+}
+
+.budget-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-3);
+}
+
+.budget-stats .stat {
+    font-size: 0.875rem;
+}
+
+.budget-stats .spent {
+    color: var(--text-secondary);
+}
+
+.budget-stats .allocated {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.budget-category-progress {
+    height: 6px;
+    background-color: var(--gray-200);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-3);
+}
+
+.budget-category-bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+}
+
+.budget-category-bar.good {
+    background-color: var(--success);
+}
+
+.budget-category-bar.warning {
+    background-color: var(--warning);
+}
+
+.budget-category-bar.danger {
+    background-color: var(--danger);
+}
+
+.budget-category-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+/* Budget Modal */
+#budget-modal .modal-dialog {
+    max-width: 450px;
+}
+
+/* Refined styles for budget inputs */
+#budget-form .amount-input {
+    margin-top: var(--spacing-1);
+}
+
+#budget-form .form-group select {
+    cursor: pointer;
+}
+
+#budget-form .save-btn {
+    min-width: 120px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .budget-summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .budget-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .budget-summary-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+    
+    .budget-card {
+        padding: var(--spacing-4);
+    }
+    
+    .budget-category {
+        padding: var(--spacing-4);
+    }
+    
+    .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-3);
+    }
+    
+    .date-filter-group {
+        width: 100%;
+    }
+    
+    .date-filter-group select {
+        flex: 1;
+    }
+}

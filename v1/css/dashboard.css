@@ -1,0 +1,334 @@
+/* ===== DASHBOARD HEADER ===== */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: var(--spacing-6);
+}
+
+.date-filter select {
+    height: 38px;
+    padding: 0 var(--spacing-3);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    min-width: 140px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 16px;
+    padding-right: 2rem;
+}
+
+.date-filter select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+/* ===== FINANCIAL CARDS ===== */
+.financial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+}
+
+.finance-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-5);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    position: relative;
+}
+
+.finance-card.income {
+    border-top: 4px solid var(--income-color);
+}
+
+.finance-card.expenses {
+    border-top: 4px solid var(--expense-color);
+}
+
+.finance-card.savings {
+    border-top: 4px solid var(--savings-color);
+}
+
+.finance-card.balance {
+    border-top: 4px solid var(--balance-color);
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-4);
+}
+
+.card-info h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-1);
+}
+
+.card-info .amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-1);
+}
+
+.card-info .trend {
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.trend.positive {
+    color: var(--success);
+}
+
+.trend.negative {
+    color: var(--danger);
+}
+
+.trend i {
+    margin-right: var(--spacing-1);
+}
+
+.card-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.income .card-icon {
+    background-color: var(--income-color);
+}
+
+.expenses .card-icon {
+    background-color: var(--expense-color);
+}
+
+.savings .card-icon {
+    background-color: var(--savings-color);
+}
+
+.balance .card-icon {
+    background-color: var(--balance-color);
+}
+
+.card-chart {
+    height: 40px;
+    width: 100%;
+}
+
+/* ===== DASHBOARD WIDGETS ===== */
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: var(--spacing-6);
+}
+
+.chart-container {
+    flex: 1;
+    min-height: 220px;
+    position: relative;
+}
+
+.chart-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-4);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.legend-color {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+#category-spending-widget, #spending-trend-widget {
+    grid-column: span 1;
+}
+
+#recent-transactions-widget, #subscriptions-widget {
+    grid-column: span 1;
+}
+
+/* ===== TRANSACTIONS LIST ===== */
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: var(--spacing-2);
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    border-radius: var(--radius);
+    transition: background-color var(--transition-fast);
+}
+
+.transaction-item:hover {
+    background-color: var(--gray-50);
+}
+
+.transaction-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.875rem;
+}
+
+.transaction-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.transaction-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.transaction-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.transaction-amount {
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.transaction-amount.income {
+    color: var(--income-color);
+}
+
+.transaction-amount.expense {
+    color: var(--expense-color);
+}
+
+/* ===== SUBSCRIPTIONS LIST ===== */
+.subscriptions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: var(--spacing-2);
+}
+
+.subscription-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    border-radius: var(--radius);
+    transition: background-color var(--transition-fast);
+}
+
+.subscription-item:hover {
+    background-color: var(--gray-50);
+}
+
+.subscription-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius);
+    background-color: var(--primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 0.875rem;
+}
+
+.subscription-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.subscription-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subscription-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.subscription-amount {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 1200px) {
+    .dashboard-widgets {
+        grid-template-columns: 1fr;
+    }
+    
+    #category-spending-widget,
+    #spending-trend-widget,
+    #recent-transactions-widget,
+    #subscriptions-widget {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .financial-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+}

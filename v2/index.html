@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSmart - Personal Finance Dashboard</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 2C8.268 2 2 8.268 2 16C2 23.732 8.268 30 16 30C23.732 30 30 23.732 30 16C30 8.268 23.732 2 16 2Z" fill="#6366F1" fill-opacity="0.2"/>
+                            <path d="M22 10H10C9.448 10 9 10.448 9 11V21C9 21.552 9.448 22 10 22H22C22.552 22 23 21.552 23 21V11C23 10.448 22.552 10 22 10Z" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 14H23" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13 22V14" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h1>FinSmart</h1>
+                    </div>
+                    <button class="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="sidebar-menu">
+                    <div class="menu-section">
+                        <p class="menu-label">Main</p>
+                        <ul>
+                            <li class="active" data-page="dashboard">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li data-page="transactions">
+                                <a href="transactions.html">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Transactions</span>
+                                </a>
+                            </li>
+                            <li data-page="budget">
+                                <a href="budget.html">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <span>Budget</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <p class="menu-label">Finances</p>
+                        <ul>
+                            <li data-page="subscriptions">
+                                <a href="subscriptions.html">
+                                    <i class="fas fa-repeat"></i>
+                                    <span>Subscriptions</span>
+                                </a>
+                            </li>
+                            <li data-page="debts">
+                                <a href="debts.html">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Debts</span>
+                                </a>
+                            </li>
+                            <li data-page="reports">
+                                <a href="reports.html">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-section">
+                        <p class="menu-label">Account</p>
+                        <ul>
+                            <li data-page="settings">
+                                <a href="settings.html">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-avatar">JD</div>
+                        <div class="user-details">
+                            <h4>John Doe</h4>
+                            <p>Free Account</p>
+                        </div>
+                    </div>
+                    <button class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main">
+            <!-- Top Navigation -->
+            <header class="top-bar">
+                <div class="left-section">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 class="page-title">Dashboard</h2>
+                </div>
+                <div class="right-section">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="top-actions">
+                        <button class="icon-btn notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="add-btn" id="add-transaction-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Transaction</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard -->
+                <section class="page active" id="dashboard">
+                    <!-- Dashboard Header -->
+                    <div class="dashboard-header">
+                        <div class="date-filter">
+                            <select id="date-range">
+                                <option value="today">Today</option>
+                                <option value="week" selected>This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Financial Cards -->
+                    <div class="financial-cards">
+                        <!-- Income Card -->
+                        <div class="finance-card income">
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Income</h3>
+                                    <p class="amount">$4,250.00</p>
+                                    <p class="trend positive"><i class="fas fa-arrow-up"></i> 12% from last period</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                            </div>
+                            <div class="card-chart" id="income-sparkline"></div>
+                        </div>
+
+                        <!-- Expenses Card -->
+                        <div class="finance-card expenses">
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Expenses</h3>
+                                    <p class="amount">$2,180.50</p>
+                                    <p class="trend negative"><i class="fas fa-arrow-up"></i> 8% from last period</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                            </div>
+                            <div class="card-chart" id="expenses-sparkline"></div>
+                        </div>
+
+                        <!-- Savings Card -->
+                        <div class="finance-card savings">
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Savings</h3>
+                                    <p class="amount">$2,069.50</p>
+                                    <p class="trend positive"><i class="fas fa-arrow-up"></i> 18% from last period</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                            </div>
+                            <div class="card-chart" id="savings-sparkline"></div>
+                        </div>
+
+                        <!-- Balance Card -->
+                        <div class="finance-card balance">
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Balance</h3>
+                                    <p class="amount">$12,450.80</p>
+                                    <p class="trend positive"><i class="fas fa-arrow-up"></i> 5% from last period</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                            </div>
+                            <div class="card-chart" id="balance-sparkline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Widgets -->
+                    <div class="dashboard-widgets">
+                        <!-- Category Spending Widget -->
+                        <div class="widget" id="category-spending-widget">
+                            <div class="widget-header">
+                                <h3>Spending by Category</h3>
+                                <div class="widget-actions">
+                                    <select id="category-chart-period">
+                                        <option value="week">Weekly</option>
+                                        <option value="month" selected>Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="chart-container">
+                                    <div class="chart-placeholder">
+                                        <!-- Doughnut chart placeholder -->
+                                        <div class="chart-circle">
+                                            <div class="chart-segment" style="--percent: 28; --color: #4CAF50;"></div>
+                                            <div class="chart-segment" style="--percent: 15; --color: #FF9800;"></div>
+                                            <div class="chart-segment" style="--percent: 23; --color: #F44336;"></div>
+                                            <div class="chart-segment" style="--percent: 12; --color: #2196F3;"></div>
+                                            <div class="chart-segment" style="--percent: 10; --color: #9C27B0;"></div>
+                                            <div class="chart-segment" style="--percent: 7; --color: #00BCD4;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-legend" id="category-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #4CAF50;"></div>
+                                        <div class="legend-label">Groceries ($350.20)</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #FF9800;"></div>
+                                        <div class="legend-label">Utilities ($190.19)</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #F44336;"></div>
+                                        <div class="legend-label">Food & Dining ($285.60)</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #2196F3;"></div>
+                                        <div class="legend-label">Transportation ($155.80)</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #9C27B0;"></div>
+                                        <div class="legend-label">Entertainment ($129.50)</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #00BCD4;"></div>
+                                        <div class="legend-label">Health ($32.45)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spending Trend Widget -->
+                        <div class="widget" id="spending-trend-widget">
+                            <div class="widget-header">
+                                <h3>Spending vs Income</h3>
+                                <div class="widget-actions">
+                                    <select id="trend-chart-period">
+                                        <option value="week">Weekly</option>
+                                        <option value="month" selected>Monthly</option>
+                                        <option value="year">Yearly</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="chart-container">
+                                    <div class="chart-placeholder line-chart-placeholder">
+                                        <!-- Line chart placeholder -->
+                                        <div class="chart-line income-line"></div>
+                                        <div class="chart-line expense-line"></div>
+                                        <div class="chart-labels">
+                                            <span>Jan</span>
+                                            <span>Feb</span>
+                                            <span>Mar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Transactions Widget -->
+                        <div class="widget" id="recent-transactions-widget">
+                            <div class="widget-header">
+                                <h3>Recent Transactions</h3>
+                                <a href="transactions.html" class="view-all">View All</a>
+                            </div>
+                            <div class="widget-body">
+                                <div id="recent-transactions" class="transactions-list">
+                                    <!-- Transaction 1 -->
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon" style="background-color: #4CAF50;">
+                                            <i class="fas fa-shopping-basket"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Grocery Shopping</div>
+                                            <div class="transaction-meta">
+                                                <div class="transaction-category">Groceries</div>
+                                                <div class="transaction-date">Mar 8</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount expense">-$120.50</div>
+                                    </div>
+
+                                    <!-- Transaction 2 -->
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon" style="background-color: #4CAF50;">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Monthly Salary</div>
+                                            <div class="transaction-meta">
+                                                <div class="transaction-category">Salary</div>
+                                                <div class="transaction-date">Mar 7</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount income">$3,250.00</div>
+                                    </div>
+
+                                    <!-- Transaction 3 -->
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon" style="background-color: #FF9800;">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Electric Bill</div>
+                                            <div class="transaction-meta">
+                                                <div class="transaction-category">Utilities</div>
+                                                <div class="transaction-date">Mar 6</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount expense">-$85.20</div>
+                                    </div>
+
+                                    <!-- Transaction 4 -->
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon" style="background-color: #00BCD4;">
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Freelance Work</div>
+                                            <div class="transaction-meta">
+                                                <div class="transaction-category">Freelance</div>
+                                                <div class="transaction-date">Mar 5</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount income">$1,000.00</div>
+                                    </div>
+
+                                    <!-- Transaction 5 -->
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon" style="background-color: #F44336;">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Restaurant Dinner</div>
+                                            <div class="transaction-meta">
+                                                <div class="transaction-category">Food & Dining</div>
+                                                <div class="transaction-date">Mar 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount expense">-$65.80</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subscriptions Widget -->
+                        <div class="widget" id="subscriptions-widget">
+                            <div class="widget-header">
+                                <h3>Monthly Subscriptions</h3>
+                                <a href="subscriptions.html" class="view-all">View All</a>
+                            </div>
+                            <div class="widget-body">
+                                <div id="current-subscriptions" class="subscriptions-list">
+                                    <!-- Subscription 1 -->
+                                    <div class="subscription-item">
+                                        <div class="subscription-icon">
+                                            <i class="fas fa-film"></i>
+                                        </div>
+                                        <div class="subscription-details">
+                                            <div class="subscription-title">Netflix</div>
+                                            <div class="subscription-meta">
+                                                <div class="subscription-date">Next: Mar 15</div>
+                                                <div class="subscription-frequency">monthly</div>
+                                            </div>
+                                        </div>
+                                        <div class="subscription-amount">$15.99</div>
+                                    </div>
+
+                                    <!-- Subscription 2 -->
+                                    <div class="subscription-item">
+                                        <div class="subscription-icon">
+                                            <i class="fas fa-music"></i>
+                                        </div>
+                                        <div class="subscription-details">
+                                            <div class="subscription-title">Spotify</div>
+                                            <div class="subscription-meta">
+                                                <div class="subscription-date">Next: Mar 20</div>
+                                                <div class="subscription-frequency">monthly</div>
+                                            </div>
+                                        </div>
+                                        <div class="subscription-amount">$9.99</div>
+                                    </div>
+
+                                    <!-- Subscription 3 -->
+                                    <div class="subscription-item">
+                                        <div class="subscription-icon">
+                                            <i class="fas fa-paint-brush"></i>
+                                        </div>
+                                        <div class="subscription-details">
+                                            <div class="subscription-title">Adobe Creative Cloud</div>
+                                            <div class="subscription-meta">
+                                                <div class="subscription-date">Next: Apr 5</div>
+                                                <div class="subscription-frequency">monthly</div>
+                                            </div>
+                                        </div>
+                                        <div class="subscription-amount">$52.99</div>
+                                    </div>
+
+                                    <!-- Subscription 4 -->
+                                    <div class="subscription-item">
+                                        <div class="subscription-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="subscription-details">
+                                            <div class="subscription-title">Gym Membership</div>
+                                            <div class="subscription-meta">
+                                                <div class="subscription-date">Next: Apr 1</div>
+                                                <div class="subscription-frequency">monthly</div>
+                                            </div>
+                                        </div>
+                                        <div class="subscription-amount">$29.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Toast Container -->
+    <div class="toast-container">
+        <div class="toast toast-success">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast-content">Welcome to FinSmart!</div>
+            <button class="toast-close"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+</body>
+</html>

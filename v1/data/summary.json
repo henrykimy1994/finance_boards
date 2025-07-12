@@ -1,0 +1,16 @@
+{
+    "income": 4250.00,
+    "expenses": 2180.50,
+    "savings": 2069.50,
+    "balance": 12450.80,
+    "incomeChange": 12,
+    "expensesChange": 8,
+    "savingsChange": 18,
+    "balanceChange": 5,
+    "sparklines": {
+      "income": [3800, 3950, 4100, 4200, 4250],
+      "expenses": [2050, 2100, 2300, 2200, 2180],
+      "savings": [1750, 1850, 1800, 2000, 2069],
+      "balance": [11500, 11800, 12100, 12300, 12450]
+    }
+  }

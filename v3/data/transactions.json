@@ -1,0 +1,14 @@
+[
+    { "id": 1, "date": "2025-03-08", "description": "Grocery Shopping", "category": "Groceries", "paymentMethod": "card", "amount": -120.50, "type": "expense" },
+    { "id": 2, "date": "2025-03-07", "description": "Monthly Salary", "category": "Salary", "paymentMethod": "bank", "amount": 3250.00, "type": "income" },
+    { "id": 3, "date": "2025-03-06", "description": "Electric Bill", "category": "Utilities", "paymentMethod": "bank", "amount": -85.20, "type": "expense" },
+    { "id": 4, "date": "2025-03-05", "description": "Freelance Work", "category": "Freelance", "paymentMethod": "bank", "amount": 1000.00, "type": "income" },
+    { "id": 5, "date": "2025-03-04", "description": "Restaurant Dinner", "category": "Food & Dining", "paymentMethod": "card", "amount": -65.80, "type": "expense" },
+    { "id": 6, "date": "2025-03-03", "description": "Gas Station", "category": "Transportation", "paymentMethod": "card", "amount": -42.30, "type": "expense" },
+    { "id": 7, "date": "2025-03-02", "description": "Movie Tickets", "category": "Entertainment", "paymentMethod": "cash", "amount": -28.50, "type": "expense" },
+    { "id": 8, "date": "2025-03-01", "description": "Internet Bill", "category": "Utilities", "paymentMethod": "bank", "amount": -59.99, "type": "expense" },
+    { "id": 9, "date": "2025-02-28", "description": "Mobile Phone Bill", "category": "Utilities", "paymentMethod": "bank", "amount": -45.00, "type": "expense" },
+    { "id": 10, "date": "2025-02-27", "description": "Uber Ride", "category": "Transportation", "paymentMethod": "card", "amount": -18.75, "type": "expense" },
+    { "id": 11, "date": "2025-02-26", "description": "Pharmacy", "category": "Health", "paymentMethod": "card", "amount": -32.45, "type": "expense" },
+    { "id": 12, "date": "2025-02-25", "description": "Coffee Shop", "category": "Food & Dining", "paymentMethod": "cash", "amount": -5.25, "type": "expense" }
+  ]

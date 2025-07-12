@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Student Loan", "type": "loan", "totalAmount": 15000.00, "remainingAmount": 8500.50, "interestRate": 4.5, "minimumPayment": 300.00, "dueDate": "15", "progress": 43 },
+    { "id": 2, "name": "Car Loan", "type": "loan", "totalAmount": 20000.00, "remainingAmount": 12450.25, "interestRate": 3.8, "minimumPayment": 425.00, "dueDate": "20", "progress": 38 },
+    { "id": 3, "name": "Credit Card", "type": "credit", "totalAmount": 5000.00, "remainingAmount": 2300.90, "interestRate": 18.5, "minimumPayment": 100.00, "dueDate": "05", "progress": 54 },
+    { "id": 4, "name": "Home Improvement Loan", "type": "loan", "totalAmount": 8000.00, "remainingAmount": 2200.00, "interestRate": 5.2, "minimumPayment": 150.00, "dueDate": "10", "progress": 72 }
+  ]

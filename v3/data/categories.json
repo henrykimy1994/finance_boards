@@ -1,0 +1,21 @@
+{
+    "expense": [
+      { "id": 1, "name": "Groceries", "icon": "fa-shopping-basket", "color": "#4CAF50" },
+      { "id": 2, "name": "Utilities", "icon": "fa-bolt", "color": "#FF9800" },
+      { "id": 3, "name": "Food & Dining", "icon": "fa-utensils", "color": "#F44336" },
+      { "id": 4, "name": "Transportation", "icon": "fa-car", "color": "#2196F3" },
+      { "id": 5, "name": "Entertainment", "icon": "fa-film", "color": "#9C27B0" },
+      { "id": 6, "name": "Health", "icon": "fa-medkit", "color": "#00BCD4" },
+      { "id": 7, "name": "Shopping", "icon": "fa-shopping-bag", "color": "#E91E63" },
+      { "id": 8, "name": "Housing", "icon": "fa-home", "color": "#795548" },
+      { "id": 9, "name": "Education", "icon": "fa-graduation-cap", "color": "#607D8B" },
+      { "id": 10, "name": "Personal", "icon": "fa-user", "color": "#9E9E9E" }
+    ],
+    "income": [
+      { "id": 11, "name": "Salary", "icon": "fa-briefcase", "color": "#4CAF50" },
+      { "id": 12, "name": "Freelance", "icon": "fa-laptop", "color": "#00BCD4" },
+      { "id": 13, "name": "Investments", "icon": "fa-chart-line", "color": "#673AB7" },
+      { "id": 14, "name": "Gifts", "icon": "fa-gift", "color": "#E91E63" },
+      { "id": 15, "name": "Other", "icon": "fa-money-bill-alt", "color": "#9E9E9E" }
+    ]
+  }
